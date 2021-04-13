@@ -38,10 +38,10 @@ public class SolveTwoPhase : MonoBehaviour
         string info = "";
 
         // First time build the tables
-        string solution = SearchRunTime.solution(moveString, out info, buildTables: true);
+        // string solution = SearchRunTime.solution(moveString, out info, buildTables: true);
 
         //Every other time
-        //string solution = Search.solution(moveString, out info);
+        string solution = Search.solution(moveString, out info);
 
         // convert the solved moves from a string to a list
         List<string> solutionList = StringToList(solution);

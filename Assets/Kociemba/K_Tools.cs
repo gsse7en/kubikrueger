@@ -91,9 +91,9 @@ namespace Kociemba
         public static short[,] DeserializeTable(string filename)
         {
             
-            TextAsset asset = Resources.Load(filename) as TextAsset;
-            Stream s = new MemoryStream(asset.bytes);
-            //Stream s = File.Open("Assets\\Resources\\" + filename, FileMode.Open);
+            // TextAsset asset = Resources.Load(filename) as TextAsset;
+            // Stream s = new MemoryStream(asset.bytes);
+            Stream s = File.Open("Assets\\Resources\\" + filename + ".bytes", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             short[,] array = (short[,])bf.Deserialize(s);
             s.Close();
@@ -112,8 +112,8 @@ namespace Kociemba
         public static sbyte[] DeserializeSbyteArray(string filename)
         {
             TextAsset asset = Resources.Load(filename) as TextAsset;
-            Stream s = new MemoryStream(asset.bytes);
-            //Stream s = File.Open("Assets\\Resources\\" + filename, FileMode.Open);
+            // Stream s = new MemoryStream(asset.bytes);
+            Stream s = File.Open("Assets\\Resources\\" + filename + ".bytes", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             sbyte[] array = (sbyte[])bf.Deserialize(s);
             s.Close();
